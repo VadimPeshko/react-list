@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+}
+
+.todo {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  background: #ffffff;
+  box-shadow: 1px 2px 20px rgba(0, 0 , 0, 0.2);
+  transform: translate(-50%, -50%);
+
+  &__sidebar {
+    width: 200px;
+    // height: calc(100% - 120px);
+    padding: 60px 20px;
+    border-right: 1px solid #979797;
+  }
+
+  &__tasks {
+    flex: 1;
+    padding: 60px;
+    overflow: auto;
+  }
+}
+
+.field {
+  width: 100%;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+  padding: 8px 12px;
+
+  &:focus {
+    border-color: #afafaf;
+  }
+}
+
+.button {
+  background: rgb(181, 218, 18);
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+
+  &:hover {
+    background: darken($color: rgb(181, 218, 18), $amount: 5%);
+  }
+
+  &:active {
+    background: darken($color: rgb(181, 218, 18), $amount: 8%);
+  }
+
+  &:disabled {
+    background: #838383;
+  }
+
+  &--grey {
+    background: rgb(224, 224, 224);
+    color: #8b8b8b;
+
+    &:hover {
+      background: darken($color: rgb(224, 224, 224), $amount: 3%);
+      color: darken($color: #8b8b8b, $amount: 5%)
+    }
+
+    &:active {
+      background: darken($color: rgb(224, 224, 224), $amount: 5%);
+      color: darken($color: #8b8b8b, $amount: 6%)
+    }
+  }
+}
